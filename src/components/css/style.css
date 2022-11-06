@@ -1,0 +1,36 @@
+ .borda-tabela{
+    background-color:#c4defc !important;
+ }
+
+ .header{
+    background-color: #0C3483 !important;
+ 
+ }
+
+ .menu-color{
+   font-size: 20px;
+    color: white;
+ }
+
+ .menu-color:hover{
+   color:#00CCC0;
+ }
+
+ .botao{
+    background-color: #4675f7;
+    color: white;
+ }
+
+ .botao:hover{
+   background-color:#0C3483;
+   color:white;
+ }
+
+ .logo{
+    width: 120px;
+    height: 120px;
+ }
+
+ .nav-link:focus, .nav-link:hover {
+   color:#00CCC0; 
+}

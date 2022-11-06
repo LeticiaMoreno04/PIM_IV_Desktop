@@ -1,0 +1,132 @@
+<div class="container mt-3">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="funcionario" data-bs-toggle="tab" data-bs-target="#funcionario-tab-pane"
+                type="button" role="tab" aria-controls="funcionario-tab-pane" aria-selected="true">Funcionário</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="atendimento" data-bs-toggle="tab" data-bs-target="#atendimento-tab-pane"
+                type="button" role="tab" aria-controls="atendimento-tab-pane" aria-selected="false">Atendimento</button>
+        </li>
+    </ul>
+</div>
+
+<div class="container my-3">
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="funcionario-tab-pane" role="tabpanel" aria-labelledby="funcionario"
+            tabindex="0">
+            <div class="container my-3">
+                <div class="card my-3">
+                    <div class="card-body borda-tabela">
+                        <h3 class="text-center">Relatório de Funcionário</h3>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="nome" class="form-label">Nome:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12 col-md-4 col-12">
+                                <label for="rg" class="form-label">N° do Documento:</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="nome" class="form-label">Identificação:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="nome" class="form-label">Data de Nascimento:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 col-12">
+                                <label for="nome" class="form-label">Período:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <label for="rg" class="form-label">Horário de Trabalho:</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 col-md-8 col-12">
+                                <label for="nome" class="form-label">E-mail:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="rg" class="form-label">Telefone:</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="observacoes" class="form-label">Observações</label>
+                                <textarea class="form-control" placeholder="Escreva suas observações" id="observacoes"
+                                    rows="16"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--RELATÓRIO DE ATENDIMENTO-->
+        <div class="tab-pane fade" id="atendimento-tab-pane" role="tabpanel" aria-labelledby="atendimento" tabindex="0">
+            <div class="container my-3">
+                <div class="card my-3">
+                    <div class="card-body borda-tabela">
+                        <h3 class="text-center">Relatório de Atendimento</h3>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="nome" class="form-label">Nome do funcionário:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12 col-md-4 col-12">
+                                <label for="rg" class="form-label">N° do Documento:</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="nome" class="form-label">Identificação:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="nome" class="form-label">Nome do Cliente:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 col-12">
+                                <label for="nome" class="form-label">Horário de Atendimento:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <label for="rg" class="form-label">N: Ordem de Serviço</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 col-md-8 col-12">
+                                <label for="nome" class="form-label">E-mail:</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-12">
+                                <label for="rg" class="form-label">Telefone:</label>
+                                <input type="text" class="form-control" id="rg">
+                            </div>
+                        </div>
+                    <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="observacoes" class="form-label">Observações</label>
+                                <textarea class="form-control" placeholder="Escreva suas observações" id="observacoes"
+                                    rows="16"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
