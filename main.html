@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head >
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />    
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"> </script>
+    <link rel="stylesheet" href="./src/components/css/style.css">
+    <script src="./src/components/loader.js"></script>
+    <title>Digital Safety Helper</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm header">
+        <div class="container-fluid">
+          <span class="navbar-brand">
+            <img src="./src/components/images/Logo.png" class="logo">
+          </span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link menu-color" aria-current="page" href="#" onclick="Loader.criarRota('tabelas');">Tabelas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-color" href="#" onclick="Loader.criarRota('chamados');">Chamados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-color" href="#" onclick="Loader.criarRota('relatorios');">Relatórios</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main id="main">
+    </main>
+  </body>
+</html>

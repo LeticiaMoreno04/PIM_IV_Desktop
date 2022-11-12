@@ -2,6 +2,7 @@ const Rotas = {
     "tabelas": "./src/pages/tabelas.html",
     "chamados": "./src/pages/chamados.html",
     "relatorios": "./src/pages/relatorios.html",
+    "home": "./main.html"
  
 }
 const Loader = {
@@ -20,6 +21,9 @@ const Loader = {
     },
     criarRota: (rota) => {
         Loader.componentLoader(Rotas[rota], "main");
+    },
+    login: () => {
+        window.location.href = './main.html';    
     }   
 }
  Loader.homeLoader(); 
