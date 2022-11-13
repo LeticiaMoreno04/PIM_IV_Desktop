@@ -1,8 +1,7 @@
 const Rotas = {
-    "tabelas": "./src/pages/tabelas.html",
-    "chamados": "./src/pages/chamados.html",
-    "relatorios": "./src/pages/relatorios.html",
-    "home": "./main.html"
+    "tabelas": "./tabelas.html",
+    "chamados": "./chamados.html",
+    "relatorios": "./relatorios.html"
  
 }
 const Loader = {
@@ -16,14 +15,11 @@ const Loader = {
             });
     },
     homeLoader: () => {
-        Loader.componentLoader("./src/pages/tabelas.html", "main");
+        Loader.componentLoader("./tabelas.html", "main");
         
     },
     criarRota: (rota) => {
         Loader.componentLoader(Rotas[rota], "main");
-    },
-    login: () => {
-        window.location.href = './main.html';    
-    }   
+    } 
 }
  Loader.homeLoader(); 

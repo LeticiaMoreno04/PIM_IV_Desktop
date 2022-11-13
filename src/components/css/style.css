@@ -7,6 +7,12 @@
  
  }
 
+ .bg-login{
+  background-image: url('https://pim-liart.vercel.app/img/backgroundLogin.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
  .menu-color{
    font-size: 20px;
     color: white;

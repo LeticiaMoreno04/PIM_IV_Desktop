@@ -1,3 +1,37 @@
+<script src="./relatorios.js"></script>
+<div class="modal" tabindex="-1" id="modalOK">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success">Aviso!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Relatório enviado com sucesso.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="modal" tabindex="-1" id="modalErro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger">Erro!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ocorreu um erro ao enviar o relatório. Tente novamente mais tarde.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
 <div class="container mt-3">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -22,49 +56,52 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <label for="nome" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="fnome">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12 col-md-4 col-12">
                                 <label for="rg" class="form-label">N° do Documento:</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="frg">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="nome" class="form-label">Identificação:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="fid">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="nome" class="form-label">Data de Nascimento:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="fdatanasc">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6 col-12">
                                 <label for="nome" class="form-label">Período:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="fperiodo">
                             </div>
                             <div class="col-sm-6 col-12">
                                 <label for="rg" class="form-label">Horário de Trabalho:</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="fhorario">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6 col-md-8 col-12">
                                 <label for="nome" class="form-label">E-mail:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="femail">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="rg" class="form-label">Telefone:</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="ftelefone">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-12">
                                 <label for="observacoes" class="form-label">Observações</label>
-                                <textarea class="form-control" placeholder="Escreva suas observações" id="observacoes"
+                                <textarea class="form-control" placeholder="Escreva suas observações" id="fobservacoes"
                                     rows="16"></textarea>
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="button" class="btn btn-lg botao" onclick="enviarEmail('funcionario-tab-pane')" id="enviarfuncionario" type="button"value="Enviar"></input>
                         </div>
                     </div>
                 </div>
@@ -80,56 +117,56 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <label for="nome" class="form-label">Nome do funcionário:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="anome">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12 col-md-4 col-12">
                                 <label for="rg" class="form-label">N° do Documento:</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="arg">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="nome" class="form-label">Identificação:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="aid">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="nome" class="form-label">Nome do Cliente:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="anomecliente">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6 col-12">
                                 <label for="nome" class="form-label">Horário de Atendimento:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="ahorario">
                             </div>
                             <div class="col-sm-6 col-12">
                                 <label for="rg" class="form-label">N: Ordem de Serviço</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="aos">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6 col-md-8 col-12">
                                 <label for="nome" class="form-label">E-mail:</label>
-                                <input type="text" class="form-control" id="nome">
+                                <input type="text" class="form-control" id="aemail">
                             </div>
                             <div class="col-sm-6 col-md-4 col-12">
                                 <label for="rg" class="form-label">Telefone:</label>
-                                <input type="text" class="form-control" id="rg">
+                                <input type="text" class="form-control" id="atelefone">
                             </div>
                         </div>
                     <div class="row mb-3">
                             <div class="col-12">
                                 <label for="observacoes" class="form-label">Observações</label>
-                                <textarea class="form-control" placeholder="Escreva suas observações" id="observacoes"
+                                <textarea class="form-control" placeholder="Escreva suas observações" id="aobservacoes"
                                     rows="16"></textarea>
                             </div>
                         </div>
                     </div>
+                    <div class="text-center">
+                        <input type="button" class="btn btn-lg botao" onclick="enviarEmail('atendimento-tab-pane')" id="enviarantendimento" type="button"value="Enviar"></input>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="text-center">
-        <button class="btn btn-lg botao" type="button">Enviar</button>
     </div>
 </div>

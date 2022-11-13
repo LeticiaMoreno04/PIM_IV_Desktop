@@ -7,10 +7,29 @@
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"> </script>
   <link rel="stylesheet" href="./src/components/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./src/API/connection.js"></script>
+  <script src="./login.js"></script>
   <title>Digital Safety Helper</title>
 </head>
 
-<body>
+<body class="bg-login">
+  <div class="modal" tabindex="-1" id="modalAviso">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Erro!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Dados de login incorretos.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <div class="container my-3">
@@ -24,15 +43,14 @@
 
             <!-- Formulario de Login -->
             <form class="form">
-              <input type="text" id="usuario" class="fadeIn second form-control mb-2" name="usuario"
-                placeholder="Usuário" maxlength="11">
+              <input type="text" id="email" class="fadeIn second form-control mb-2" name="email"
+                placeholder="E-mail">
               <input type="password" id="password" class="fadeIn third form-control mb-2" name="senha"
-                placeholder="Senha" maxlength="20">
-                <a class=" btn btn-md botao fadeIn fourth" href="./main.html">
-                  Entrar
-                </a>
+                placeholder="Senha">
+                <input type="button" id="entrar" class="btn btn-md botao fadeIn fourth" value="Entrar" onclick="login()">
                 <!-- <button class="btn btn-md botao fadeIn fourth">Entrar</button> -->
             </form>
+           
           </div>
         </div>
       </div>
