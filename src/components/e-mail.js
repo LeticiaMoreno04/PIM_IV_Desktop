@@ -1,11 +1,17 @@
-function enviarEmail(relatorio){
+function enviarEmail(){
     let corpo = "";
     let titulo = "";
-    let enviaratendimento = document.getElementById("enviaratendimento");
-    let enviarfuncionario = document.getElementById("enviarfuncionario");
-    //enviaratendimento.disabled=true;
-    //enviarfuncionario.disabled=true;
-    if(relatorio.includes("funcionario-tab-pane")) {
+    const enviaratendimento = document.getElementById("atendimento-tab-pane");
+    const enviarfuncionario = document.getElementById("funcionario-tab-pane");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const modalOK = new bootstrap.Modal(document.getElementById('modalOK'), {});
+    const modalErro = new bootstrap.Modal(document.getElementById('modalErro'), {});
+    document.getElementById('modalOK').addEventListener('hidden.bs.modal', function (event) {
+        Loader.criarRota('relatorios');
+    });
+    btnEnviar.disabled=true;
+
+    if(enviarfuncionario.classList.contains("active")) {
       titulo = "Relatório de Funcionário";
       corpo = `
       <div class="container my-3">
@@ -63,7 +69,7 @@ function enviarEmail(relatorio){
       </div>
       `;
     }
-    else if(relatorio.includes("atendimento-tab-pane")) {
+    else if(enviaratendimento.classList.contains("active")) {
       titulo = "Relatório de Atendimento";
       corpo = `
       <div class="container my-3">
@@ -148,12 +154,11 @@ function enviarEmail(relatorio){
       })
       .then((message) => {
         console.log(message);
-        //enviaratendimento.disabled=false;
-        //enviarfuncionario.disabled=false;
+        modalOK.show();
+
       }).catch(error => {
         console.log(error);
-        //enviaratendimento.disabled=false;
-        //enviarfuncionario.disabled=false;
+        modalErro.show();
       });
     }
   }

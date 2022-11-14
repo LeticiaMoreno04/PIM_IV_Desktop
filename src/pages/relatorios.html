@@ -1,4 +1,3 @@
-<script src="./relatorios.js"></script>
 <div class="modal" tabindex="-1" id="modalOK">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -10,7 +9,7 @@
           <p>Relatório enviado com sucesso.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn botao" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
@@ -27,7 +26,7 @@
           <p>Ocorreu um erro ao enviar o relatório. Tente novamente mais tarde.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn botao" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
@@ -100,9 +99,6 @@
                                     rows="16"></textarea>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <input type="button" class="btn btn-lg botao" onclick="enviarEmail('funcionario-tab-pane')" id="enviarfuncionario" type="button"value="Enviar"></input>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -154,7 +150,7 @@
                                 <input type="text" class="form-control" id="atelefone">
                             </div>
                         </div>
-                    <div class="row mb-3">
+                        <div class="row mb-3">
                             <div class="col-12">
                                 <label for="observacoes" class="form-label">Observações</label>
                                 <textarea class="form-control" placeholder="Escreva suas observações" id="aobservacoes"
@@ -162,11 +158,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <input type="button" class="btn btn-lg botao" onclick="enviarEmail('atendimento-tab-pane')" id="enviarantendimento" type="button"value="Enviar"></input>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+        <input type="button" class="btn btn-lg botao" onclick="enviarEmail()" id="btnEnviar" type="button"value="Enviar"></input>
     </div>
 </div>
