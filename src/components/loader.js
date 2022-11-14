@@ -1,9 +1,12 @@
+//Rotas para redirecionamento das páginas
 const Rotas = {
     "tabelas": "./tabelas.html",
     "chamados": "./chamados.html",
     "relatorios": "./relatorios.html"
  
 }
+
+//Função para redirecionamento das páginas
 const Loader = {
     componentLoader: (componente, elemento) => {
         fetch(componente)

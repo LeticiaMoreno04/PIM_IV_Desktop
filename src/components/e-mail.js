@@ -1,17 +1,23 @@
+//Função para envio do E-mail de relatórios
 function enviarEmail(){
     let corpo = "";
     let titulo = "";
+
+    //Declaração das constantes dos elementos da página
     const enviaratendimento = document.getElementById("atendimento-tab-pane");
     const enviarfuncionario = document.getElementById("funcionario-tab-pane");
     const btnEnviar = document.getElementById("btnEnviar");
     const modalOK = new bootstrap.Modal(document.getElementById('modalOK'), {});
     const modalErro = new bootstrap.Modal(document.getElementById('modalErro'), {});
+    
+    //Evento do botão da modal de alerta
     document.getElementById('modalOK').addEventListener('hidden.bs.modal', function (event) {
         Loader.criarRota('relatorios');
     });
     btnEnviar.disabled=true;
 
     if(enviarfuncionario.classList.contains("active")) {
+        //Montagem do envio de relatório do funcionário
       titulo = "Relatório de Funcionário";
       corpo = `
       <div class="container my-3">
@@ -70,6 +76,7 @@ function enviarEmail(){
       `;
     }
     else if(enviaratendimento.classList.contains("active")) {
+        //Montagem do e-mail de relatório de atendimento
       titulo = "Relatório de Atendimento";
       corpo = `
       <div class="container my-3">
@@ -129,6 +136,7 @@ function enviarEmail(){
     }
   
     if(corpo.length > 0) {
+        //Envio de e-mail
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "digitalsafetylife.naoresponda@gmail.com",
@@ -153,10 +161,12 @@ function enviarEmail(){
         `,
       })
       .then((message) => {
+        //Exibição da mensagem de sucesso  
         console.log(message);
         modalOK.show();
 
       }).catch(error => {
+        //Exibição da mensagem de erro
         console.log(error);
         modalErro.show();
       });

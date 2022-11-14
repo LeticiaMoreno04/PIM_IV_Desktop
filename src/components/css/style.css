@@ -8,7 +8,7 @@
  }
 
  .bg-login{
-  background-image: url('https://pim-liart.vercel.app/img/backgroundLogin.jpg');
+  background-image: url('../images/backgroundLogin.jpg');
   background-repeat: no-repeat;
   background-size: cover;
  }

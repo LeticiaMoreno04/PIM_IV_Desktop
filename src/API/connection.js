@@ -1,3 +1,4 @@
+//Conexão com a API
 const connection = axios.create({
     //Production
     baseURL: "https://pim-api.herokuapp.com/api",
