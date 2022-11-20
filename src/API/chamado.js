@@ -5,7 +5,8 @@ function carregaChamado(id){
     }).then((objectData)=>{
         let chamadoData="";
         console.log(document.getElementById("chamado"));
-            chamadoData += `
+            chamadoData += ` 
+            <form class="form form-control" >
             <div class="row mb-3">
             <div class="col-4">
                 <label for="nome" class="form-label">Nome:</label>
@@ -154,7 +155,7 @@ function carregaChamado(id){
          <div class="text-center">
             <input type="button" class="btn btn-lg botao" onclick="atualizarChamado(${objectData.tb_pessoa.id})" id="btnEnviar" type="button"value="Enviar"></input>
         </div>
-            `;
+        </form>    `;
             Loader.criarRota('chamados');
             setTimeout(() => {
                 document.getElementById("chamado").innerHTML=chamadoData;
