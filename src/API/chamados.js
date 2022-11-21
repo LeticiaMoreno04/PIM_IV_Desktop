@@ -11,16 +11,18 @@ fetch("https://pim-api.herokuapp.com/api/client/form/get/all").then((data)=>{
 function carregaTabela(data){
     let tableData="";
     data.map((values)=>{
-        tableData += ` 
-        <tr>
-        <td>${values.id}</td>
-        <td>${values.tb_pessoa.nm_pessoa}</td>
-        <td>Pendente</td>
-        <td></td>
-        <td>
-          <a class=" btn btn-md botao" href="#" onclick="carregaChamado(${values.tb_pessoa.id})">Visualizar</a>
-        </td>
-        </tr>`;
+        if (values.tb_pessoa != null){
+            tableData += ` 
+            <tr>
+            <td>${values.id}</td>
+            <td>${values.tb_pessoa.nm_pessoa}</td>
+            <td>Pendente</td>
+            <td></td>
+            <td>
+              <a class=" btn btn-md botao" href="#" onclick="carregaChamado(${values.tb_pessoa.id})">Visualizar</a>
+            </td>
+            </tr>`;
+        }
     });
     document.getElementById("table_body").innerHTML=tableData;
 }
