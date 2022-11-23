@@ -1,5 +1,39 @@
-<div class="container my-5" id="chamado">
-<div class="text-center">
-    <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">   
+<div class="modal" tabindex="-1" id="modalOK">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success">Aviso!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Chamado atualizado com sucesso.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao" data-bs-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="modal" tabindex="-1" id="modalErro">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">Erro!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Ocorreu um erro ao atualizar o chamado. Tente novamente mais tarde.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao" data-bs-dismiss="modal" onclick="document.location.reload(true);">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5" id="chamado">
+    <div class="text-center">
+        <img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif">
+    </div>
 </div>

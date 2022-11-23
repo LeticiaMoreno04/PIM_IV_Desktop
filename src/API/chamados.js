@@ -14,13 +14,13 @@ function carregaTabela(data){
         if (values.tb_cliente.tb_pessoa != null){
             return tableData += ` 
             <tr>
-            <td>${values.id}</td>
-            <td>${values.tb_cliente.tb_pessoa.nm_pessoa}</td>
-            <td>${values.status}</td>
-            <td>
-              <a class=" btn btn-md botao" href="#" onclick="carregaChamado(${values.tb_cliente.id})">Visualizar</a>
-            </td>
-
+                <td>${values.id}</td>
+                <td>${values.tb_cliente.tb_pessoa.nm_pessoa}</td>
+                <td>${values.status}</td>
+                <td>${values.funcionario_resp != null ? values.funcionario_resp : "Não Atribuído"}</td>
+                <td>
+                <a class=" btn btn-md botao" href="#" onclick="carregaChamado(${values.tb_cliente.id})">Visualizar</a>
+                </td>
             </tr>`;
         }
     });
@@ -29,6 +29,13 @@ function carregaTabela(data){
 
 function pesquisar(){
     let texto = document.getElementById("busca").value;
-    let x=chamados.filter(chamado =>chamado.tb_pessoa.nm_pessoa.includes(texto));
+    let x;
+    
+    if(texto == "" || texto == null){
+        x = chamados
+    }
+    else{
+        x = chamados.filter(chamado => chamado.funcionario_resp?.includes(texto));
+    }
     carregaTabela(x);
 }

@@ -45,7 +45,7 @@ function carregaChamado(id){
             </div>
             <div class="col-4">
                 <label for="estado_civil" class="form-label">Estado Civil:</label>
-                <input type="text" class="form-control" id="estado_civil" value="${objectData.tb_pessoa.estado_civil}" >
+                <input type="text" class="form-control" id="estado_civil" value="${objectData.tb_pessoa.estado_civil != undefined ? objectData.tb_pessoa.estado_civil : "Regido no contrato"}" >
             </div>
         </div>
         <div class="row mb-3">
@@ -134,8 +134,8 @@ function carregaChamado(id){
                         <label class="form-check-label" for="medio">Médio</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="baixo" value="BAIXO" ${objectData.risco_profissao?.at(0)=="B"?"checked":""}>
-                        <label class="form-check-label" for="baixo">Baixo</label>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="pequeno" value="PEQUENO" ${objectData.risco_profissao?.at(0)=="P"?"checked":""}>
+                        <label class="form-check-label" for="pequeno">Pequeno</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="risco_trabalho" id="nulo" value="NULO" ${objectData.risco_profissao?.at(0)=="N"?"checked":""}>
@@ -146,14 +146,18 @@ function carregaChamado(id){
             <div class="col-4">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select" id="status">
-                  <option value="PENDENTE" ${objectData.status?.at(0)=="P"?"selected":""}>Pendente</option>
-                  <option value="EM ANDAMENTO" ${objectData.status?.at(0)=="e"?"selected":""}>Em Andamento</option>
-                  <option value="CONCLUÍDO" ${objectData.status?.at(0)=="c"?"selected":""}>Concluído</option>
+                  <option value="Pendente" ${objectData.tb_chamado[0].status?.at(0)=="P"?"selected":""}>Pendente</option>
+                  <option value="Em Andamento" ${objectData.tb_chamado[0].status?.at(0)=="E"?"selected":""}>Em Andamento</option>
+                  <option value="Concluído" ${objectData.tb_chamado[0].status?.at(0)=="C"?"selected":""}>Concluído</option>
                 </select>
               </div>
-          </div>              
+              <div class="col-4">
+                <label for="responsavel" class="form-label">Responsável:</label>
+                <input type="text" class="form-control" id="responsavel" value="${objectData.tb_chamado[0].funcionario_resp != null ? objectData.tb_chamado[0].funcionario_resp : ""}" >
+            </div>
+          </div>                       
          <div class="text-center">
-            <input type="button" class="btn btn-lg botao" onclick="atualizarChamado(${objectData.id})" id="btnEnviar" type="button"value="Enviar"></input>
+            <input type="button" class="btn btn-lg botao" onclick="atualizarChamado(${objectData.id}, ${objectData.tb_chamado[0].id})" id="btnEnviar" type="button"value="Enviar"></input>
         </div>
         </form>    `;
             Loader.criarRota('chamados');
