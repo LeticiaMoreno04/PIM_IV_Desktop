@@ -74,7 +74,7 @@ function carregaChamado(id){
         <div class="row mb-3">
             <div class="col-4">
                 <label for="data_de_nascimento" class="form-label">Data de Nascimento:</label>
-                <input type="text" class="form-control" id="data_de_nascimento" value="${objectData.tb_pessoa.dt_nascimento}" >
+                <input type="text" class="form-control" id="data_de_nascimento" value="${objectData.tb_pessoa.dt_nascimento.split("T")[0]}" >
             </div>
             <div class="col-4">
                 <label for="hobbies" class="form-label">Hobbies:</label>
@@ -122,23 +122,23 @@ function carregaChamado(id){
                 <label for="risco_trabalho" class="form-label">Risco de Trabalho:</label>
                 <div class="row-fluid">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="extremo" value="EXTREMO" ${objectData.risco_profissao.at(0)=="E"?"checked":""}>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="extremo" value="EXTREMO" ${objectData.risco_profissao?.at(0)=="E"?"checked":""}>
                         <label class="form-check-label" for="extremo">Extremo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="alto" value="ALTO" ${objectData.risco_profissao.at(0)=="A"?"checked":""}>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="alto" value="ALTO" ${objectData.risco_profissao?.at(0)=="A"?"checked":""}>
                         <label class="form-check-label" for="alto">Alto</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="medio" value="MEDIO" ${objectData.risco_profissao.at(0)=="M"?"checked":""}>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="medio" value="MEDIO" ${objectData.risco_profissao?.at(0)=="M"?"checked":""}>
                         <label class="form-check-label" for="medio">Médio</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="baixo" value="BAIXO" ${objectData.risco_profissao.at(0)=="B"?"checked":""}>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="baixo" value="BAIXO" ${objectData.risco_profissao?.at(0)=="B"?"checked":""}>
                         <label class="form-check-label" for="baixo">Baixo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="risco_trabalho" id="nulo" value="NULO" ${objectData.risco_profissao.at(0)=="N"?"checked":""}>
+                        <input class="form-check-input" type="radio" name="risco_trabalho" id="nulo" value="NULO" ${objectData.risco_profissao?.at(0)=="N"?"checked":""}>
                         <label class="form-check-label" for="nulo">Nulo</label>
                     </div>
                 </div>
@@ -146,14 +146,14 @@ function carregaChamado(id){
             <div class="col-4">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select" id="status">
-                  <option value="PENDENTE">Pendente</option>
-                  <option value="EM ANDAMENTO">Em Andamento</option>
-                  <option value="CONCLUÍDO">Concluído</option>
+                  <option value="PENDENTE" ${objectData.status?.at(0)=="P"?"selected":""}>Pendente</option>
+                  <option value="EM ANDAMENTO" ${objectData.status?.at(0)=="e"?"selected":""}>Em Andamento</option>
+                  <option value="CONCLUÍDO" ${objectData.status?.at(0)=="c"?"selected":""}>Concluído</option>
                 </select>
               </div>
           </div>              
          <div class="text-center">
-            <input type="button" class="btn btn-lg botao" onclick="atualizarChamado(${objectData.tb_pessoa.id})" id="btnEnviar" type="button"value="Enviar"></input>
+            <input type="button" class="btn btn-lg botao" onclick="atualizarChamado(${objectData.id})" id="btnEnviar" type="button"value="Enviar"></input>
         </div>
         </form>    `;
             Loader.criarRota('chamados');

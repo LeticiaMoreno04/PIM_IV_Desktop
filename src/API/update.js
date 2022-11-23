@@ -13,14 +13,14 @@ function atualizarChamado(id) {
         hobbies: document.getElementById("hobbies").value,
         fuma: Boolean(document.querySelector('input[name="fuma"]:checked').value),
         registro_conducao: document.getElementById("registro_conducao").value,
-        faixa_renda: document.getElementById("faixa_mensal").value,
-        risco_profissao: Boolean(document.querySelector('input[name="risco_trabalho"]:checked').value),
+        faixa_renda: parseFloat(document.getElementById("faixa_mensal").value),
+        risco_profissao: document.querySelector('input[name="risco_trabalho"]:checked').value,
         politicamente_exposto: Boolean(document.querySelector('input[name="politico"]:checked').value),
         status: document.getElementById("status").value,
         
     }
-    fetch(`https://pim-api.herokuapp.com/api/client/form/${id}`, {
-        method: "PATCH",
+    fetch(`https://pim-api.herokuapp.com/api/client/pessoa/update/${id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
