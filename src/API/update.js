@@ -1,3 +1,4 @@
+//Atualiza dados do cliente
 function atualizarChamado(id, chamado) {
   const data={
     nm_pessoa: document.getElementById("nome").value,
