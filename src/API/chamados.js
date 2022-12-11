@@ -1,6 +1,6 @@
 //Mostra os clientes
 var chamados = [];
-fetch("https://pim-api.herokuapp.com/api/client/form/get/all").then((data)=>{
+fetch("https://api-pim.vercel.app/api/client/form/get/all").then((data)=>{
     //console.log(data);
     return data.json();
 }).then((objectData)=>{

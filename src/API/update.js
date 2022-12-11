@@ -38,7 +38,7 @@ function atualizarChamado(id, chamado) {
 function atualizaDados(data, id, chamadoData, chamado){
   const modalErro = new bootstrap.Modal(document.getElementById('modalErro'), {});
 
-  fetch(`https://pim-api.herokuapp.com/api/client/pessoa/update/${id}`, {
+  fetch(`https://api-pim.vercel.app/api/client/pessoa/update/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +60,7 @@ function atualizaStatus(chamadoData, id){
   const modalOK = new bootstrap.Modal(document.getElementById('modalOK'), {});
   const modalErro = new bootstrap.Modal(document.getElementById('modalErro'), {});
 
-  fetch(`https://pim-api.herokuapp.com/api/client/form/${id}`,{
+  fetch(`https://api-pim.vercel.app/api/client/form/${id}`,{
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
